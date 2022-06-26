@@ -1,7 +1,10 @@
 package com.dufuna.berlin.chijiokeorabueze.lekki;
 
 import com.dufuna.berlin.chijiokeorabueze.lekki.model.LekkiProperty;
+import com.dufuna.berlin.chijiokeorabueze.lekki.repository.SimpleLekkiPropertyRepositoryImpl;
 import com.dufuna.berlin.chijiokeorabueze.lekki.service.MockLekkiPropertyService;
+
+import java.util.ArrayList;
 
 public class MockLekkiPropertyApp {
     public static void main(String[] args) {
@@ -20,14 +23,26 @@ public class MockLekkiPropertyApp {
         property1.setDescription("Beautiful suburban house");
 
 
+
+        // main method tests
         System.out.println("property1.toString() " + property1.toString());
         System.out.println("property1.equals(property1) " + property1.equals(property1));
         System.out.println("property1.hashCode() " + property1.hashCode());
 
 
+        // service method tests
         MockLekkiPropertyService mockLekkiPropertyService = new MockLekkiPropertyService();
         mockLekkiPropertyService.saveProperty(property1);
         mockLekkiPropertyService.getProperty();
+
+        // repository method tests
+        SimpleLekkiPropertyRepositoryImpl repo = new SimpleLekkiPropertyRepositoryImpl();
+        LekkiProperty savedProperty = repo.save(property1);
+        System.out.println("saved property= " + savedProperty);
+        LekkiProperty foundProperty = repo.findById(1);
+        System.out.println("found property= " + foundProperty);
+        ArrayList allProperty = repo.findAll();
+        System.out.println("All property= " + allProperty);
 
     }
 }

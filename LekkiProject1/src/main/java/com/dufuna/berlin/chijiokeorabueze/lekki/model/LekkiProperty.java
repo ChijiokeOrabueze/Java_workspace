@@ -34,6 +34,8 @@ public class LekkiProperty {
         this.propertyId = ++numberOfProperty;
     }
 
+    public void setPropertyId(int id) {this.propertyId = id;}
+
     public String getPropertyAddress() {
         return propertyAddress;
     }
