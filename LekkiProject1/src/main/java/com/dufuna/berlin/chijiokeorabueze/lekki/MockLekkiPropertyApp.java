@@ -4,7 +4,7 @@ import com.dufuna.berlin.chijiokeorabueze.lekki.model.LekkiProperty;
 import com.dufuna.berlin.chijiokeorabueze.lekki.service.MockLekkiPropertyService;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+
 
 public class MockLekkiPropertyApp {
     public static void main(String[] args) {
@@ -35,7 +35,8 @@ public class MockLekkiPropertyApp {
             property1.setValidTo(property[9]);
             property1.setDescription(property[10]);
 
-            mockLekkiPropertyService.saveProperty(property1);
+            LekkiProperty savedProperty = mockLekkiPropertyService.saveProperty(property1);
+            System.out.println("savedProperty = " + savedProperty);
 
 
         }
