@@ -4,23 +4,22 @@ import com.dufuna.berlin.chijiokeorabueze.lekki.model.LekkiProperty;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
 public class SimpleLekkiPropertyRepositoryImpl implements SimpleLekkiPropertyRepository{
-    private HashMap<Integer, LekkiProperty> database = new HashMap<>();
+    private Map<Integer, LekkiProperty> database = new HashMap<>();
+
 
     @Override
     public LekkiProperty save(LekkiProperty property) {
-        int id = property.getPropertyId();
-        database.put(id, property);
-
+        database.put(property.getPropertyId(), property);
         return property;
     }
 
     @Override
     public LekkiProperty findById(int id) {
         if (database.containsKey(id)) {
-            LekkiProperty property = database.get(id);
-            return property;
+            return database.get(id);
         }
         return null;
     }
@@ -33,7 +32,6 @@ public class SimpleLekkiPropertyRepositoryImpl implements SimpleLekkiPropertyRep
 
     @Override
     public void update(LekkiProperty newProperty) {
-        int id = newProperty.getPropertyId();
-        database.replace(id, newProperty);
+        database.replace(newProperty.getPropertyId(), newProperty);
     }
 }

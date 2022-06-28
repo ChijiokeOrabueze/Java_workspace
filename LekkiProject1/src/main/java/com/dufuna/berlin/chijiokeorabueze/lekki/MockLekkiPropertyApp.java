@@ -1,6 +1,7 @@
 package com.dufuna.berlin.chijiokeorabueze.lekki;
 
 import com.dufuna.berlin.chijiokeorabueze.lekki.model.LekkiProperty;
+import com.dufuna.berlin.chijiokeorabueze.lekki.service.LekkiPropertyService;
 import com.dufuna.berlin.chijiokeorabueze.lekki.service.MockLekkiPropertyService;
 
 import java.util.ArrayList;
@@ -8,7 +9,7 @@ import java.util.ArrayList;
 
 public class MockLekkiPropertyApp {
     public static void main(String[] args) {
-        MockLekkiPropertyService mockLekkiPropertyService = new MockLekkiPropertyService();
+        LekkiPropertyService mockLekkiPropertyService = new MockLekkiPropertyService();
 
         String[][] propertiesToAdd = {
             {"No 24 Bishop Ajayi Street, Lagos.", "Mr Taiwo Baye", "Flat", "4", "4", "1", "3", "2", "23/05/2020", "23/05/2022",
