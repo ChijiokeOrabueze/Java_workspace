@@ -18,6 +18,7 @@ import java.util.ArrayList;
 @Service
 public class TaxBracketServiceImpl implements TaxBracketService{
 
+
     @Autowired
     private TaxBracketRepository repository;
 
